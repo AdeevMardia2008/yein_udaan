@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 st.markdown("# Ask your doubts to the AI chatbot!")
-st.sidebar.markdown("# Chatbot")
+st.sidebar.markdown("# Yein Udaan")
 
 GOOGLE_API_KEY = "AIzaSyAMEUSbRYnHHEVj0hfUgdeoOfLFeFUYvdQ"
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -14,13 +14,13 @@ def get_gemini_response(query):
     instantResponse=chat.send_message(query,stream=True)
     return instantResponse
 
-st.header("A simple Chat Bot")
+st.header("Yein Udaan - Bridge the opportunity gap through learning.")
 
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
 
 inputText=st.text_input("Input: ",key="input")
-submitButton=st.button("Get Instant answers")
+submitButton=st.button("Get Response")
 
 if submitButton and inputText:
     output=get_gemini_response(inputText)
@@ -30,6 +30,6 @@ if submitButton and inputText:
         st.write(outputChunk.text)
         st.session_state['chat_history'].append(("Bot", outputChunk.text))
         
-st.subheader("The Chat History is") 
+st.subheader("Chat History") 
 for role, text in st.session_state['chat_history']:
     st.write(f"{role}: {text}")
