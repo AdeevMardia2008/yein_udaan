@@ -63,7 +63,7 @@ st.sidebar.image("https://yeinudaan.org/wp-content/uploads/2020/10/YU-Logo_witho
 st.sidebar.markdown("# Yein Udaan")
 
 # Configure the Google Generative AI
-GOOGLE_API_KEY = "AIzaSyAMEUSbRYnHHEVj0hfUgdeoOfLFeFUYvdQ"
+GOOGLE_API_KEY = "AIzaSyDQ-KKFb0ztH4MG0f_ckAgL92J74vHpsJ4"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 geminiModel = genai.GenerativeModel("gemini-pro")
